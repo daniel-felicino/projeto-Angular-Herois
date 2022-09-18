@@ -1,0 +1,1 @@
+O aplicativo Tour of Heroes que você cria ajuda uma agência de recrutamento a gerenciar seu estábulo de heróis. O aplicativo tem muitos dos recursos que você esperaria encontrar em qualquer aplicativo controlado por dados.
