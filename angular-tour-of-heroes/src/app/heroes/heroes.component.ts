@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../Herointerface';
+import { HEROES } from '../mock-heroes';
 @Component({
   selector: 'app-heroes',
   // selector: 	O seletor de elemento CSS do componente, corresponde ao nome do elemento 
@@ -10,15 +11,17 @@ import { Hero } from '../Herointerface';
   //styleUrls: A localização dos estilos CSS privados do componente.
 })
 export class HeroesComponent implements OnInit {
+
+  heroes = HEROES;
+  selectedHero?: Hero;
  
-hero = {
-  id:1,
-  name:"Windstorm"
-}
+
   constructor() { }
 
   ngOnInit(): void {
-    // ngOnInit: lógica de inicialização.
   }
 
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
 }

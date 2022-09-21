@@ -1,22 +1,11 @@
-<h1>{{hero.name | uppercase}} Detalhes</h1>
-<div><span>id:</span>{{hero.id}}</div>
-<div><span>Nome:</span>{{hero.name}}</div>
-<!-- O navegador é 
-atualizado e agora o nome do herói é exibido em letras maiúsculas.
-A palavra uppercasena ligação de interpolação 
-após o |caractere de barra vertical ativa o UppercasePipe. -->
 
-<!-- Pipes são uma boa maneira de formatar strings,
-valores monetários,datas e outros dados de exibição.
-O Angular é fornecido com vários tubos embutidos e você pode criar o seu próprio. -->
-<div>
-    <label for="name">Nome do Heroi </label>
-    <input id="name"[(ngModel)]="hero.name" placeholder="Nome">
-</div>
-
-<!-- [(ngModel)]é a sintaxe de vinculação de dados bidirecional do Angular.
-
-Aqui, ele vincula a hero.name propriedade à caixa de texto HTML para que os dados
-possam fluir em ambas as direções . Os dados podem
-fluir da hero.name propriedade para a caixa de texto e da caixa de texto de volta
-para o arquivo hero.name. -->
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span>
+      <span class="name">{{hero.name}}</span>
+    </button>
+  </li>
+</ul>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
