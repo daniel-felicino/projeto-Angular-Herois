@@ -1,0 +1,12 @@
+<h2>Top Herois</h2>
+
+<div class="heroes-menu">
+    <a *ngFor="let hero of heroes"
+    routerLink="/detail/{{hero.id}}">
+    {{hero.name}}
+  </a>
+</div>
+<!-- O modelo apresenta uma grade de links de nomes de heróis.
+O repetidor cria tantos links quantos estiverem na matriz do componente.*ngForheroes
+Os links são estilizados como blocos coloridos pelo dashboard.component.css.
+Os links não vão a lugar nenhum ainda. -->
