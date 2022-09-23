@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HeroesComponent } from './app/heroes/heroes.component';
 import { DashboardComponent } from './app/heroes/dashboard/dashboard.component';
 import { HeroDetailComponent } from './app/heroes/hero-detail/hero-detail.component';
+
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
