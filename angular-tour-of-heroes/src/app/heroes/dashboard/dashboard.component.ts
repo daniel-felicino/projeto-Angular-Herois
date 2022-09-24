@@ -8,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-heroes : Hero[] = []
+heroes : Hero[] = [];
 
   constructor(private heroService:HeroService) { }
 
   ngOnInit(): void {
+    this.getHeroes();
   }
   getHeroes(): void {
     this.heroService.getHeroes()

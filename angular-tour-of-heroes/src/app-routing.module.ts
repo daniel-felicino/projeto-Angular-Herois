@@ -1,5 +1,6 @@
-import { Routes, RouterModule } from '@angular/router';
+
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { HeroesComponent } from './app/heroes/heroes.component';
 import { DashboardComponent } from './app/heroes/dashboard/dashboard.component';
 import { HeroDetailComponent } from './app/heroes/hero-detail/hero-detail.component';
@@ -10,19 +11,21 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent }
+];
   //path	Uma string que corresponde ao URL na barra de endereço do navegador.
   //corresponda a um caminho para o arquivo
   //	O componente que o roteador deve criar ao navegar para esta rota.
   //O : caractere de dois pontos no path indica que :id é um espaço reservado 
   //para um herói específico id.
 
-]
+
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
-  // O método é chamado forRoot()porque você configura o roteador no nível raiz do aplicativo. 
+  //forRoot faz a inicialização do roteador ouvindo as alterações 
+  // O método é chamado forRoot()porque você configura o roteador no *nível raiz* do aplicativo. 
   // O forRoot()método fornece os provedores de serviço e as diretivas necessárias para o 
-  // roteamento e realiza a navegação inicial com base na URL do navegador atual.
+  // roteamento e realiza a *navegação inicial* com base na URL do navegador atual.
 
 
 
