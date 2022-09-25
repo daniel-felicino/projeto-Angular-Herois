@@ -1,4 +1,4 @@
-import { HeroService } from './../../hero.service';
+import { HeroService } from 'src/hero.service';
 import { Hero } from 'src/app/Herointerface';
 import { Component, OnInit } from '@angular/core';
 

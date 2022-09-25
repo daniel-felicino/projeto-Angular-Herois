@@ -1,12 +1,12 @@
-"app.component"
+
 <!-- ligação de interpolação do Angular. -->
 <h1>{{ title }}</h1>
-<nav>
+<nav class="nav">
     <a routerLink="/dashboard">Dashboard</a>
     <a routerLink="/heroes">Heroes</a>
 </nav>
 
 <router-outlet></router-outlet>
-<!-- O AppComponent template não precisa mais <app-heroes>porque o aplicativo só exibe 
+<!-- O AppComponent template não precisa mais <app-heroes>porque o aplicativo só exibe
 o HeroesComponent quando o usuário navega até ele. -->
-<app-messages></app-messages>
+

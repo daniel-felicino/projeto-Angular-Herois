@@ -1,4 +1,4 @@
-import { Hero } from 'src/app/Herointerface'; 
+import { Hero } from 'src/app/Herointerface';
 import { Component, OnInit } from '@angular/core';
 
 import { Observable, Subject } from 'rxjs';
@@ -20,21 +20,24 @@ export class HeroSearchComponent implements OnInit {
 
   constructor(private heroService: HeroService) {}
 
-  // Push a search term into the observable stream.
   search(term: string): void {
     this.searchTerms.next(term);
   }
 
   ngOnInit(): void {
     this.heroes$ = this.searchTerms.pipe(
-      // wait 300ms after each keystroke before considering the term
       debounceTime(300),
-
-      // ignore new term if same as previous term
+      // debounceTime(300)espera até que o fluxo de novos eventos de string seja pausado
+      // por 300 milissegundos antes de passar a string mais recente.
+      // As solicitações provavelmente não ocorrerão com mais frequência do que 300 ms.
       distinctUntilChanged(),
-
-      // switch to new search observable each time the term changes
+      // distinctUntilChanged()garante que uma solicitação seja enviada soment
+      // se o texto do filtro for alterado.
       switchMap((term: string) => this.heroService.searchHeroes(term)),
+      // switchMap()chama o serviço de pesquisa para cada termo de pesquisa que passa
+      // por debounce()e distinctUntilChanged(). Ele cancela e descarta observáveis ​​de
+      // pesquisa anteriores, retornando apenas o observável de serviço de pesquisa mais
+      // recente
     );
   }
 }
